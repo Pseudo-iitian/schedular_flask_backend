@@ -1,8 +1,6 @@
 from flask import Flask, jsonify, request  # Added 'request' here
-from datetime import datetime, timedelta
-import pywhatkit as pwt
+from datetime import datetime
 from flask_cors import CORS  # ✅ Import CORS
-import time
 
 app = Flask(__name__)
 CORS(app)  # ✅ Enable CORS for all routes
