@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request  # Added 'request' here
 from datetime import datetime
 from flask_cors import CORS  # ✅ Import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)  # ✅ Enable CORS for all routes
@@ -193,4 +194,5 @@ def send_tomorrow_schedule():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # fallback to 5000 locally
+    app.run(debug=True, host='0.0.0.0', port=port)
